@@ -2,67 +2,39 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 import ShopDropDown from './ShopDropDown'
+import InsideDropDown from './InsideDropDown'
 
 interface AppbarProps {
 
 }
 
-const dropdownColumnItems = [
-    {
-        name: 'Guide 1',
-        href: '/shop/guide1'
-    },
-    {
-        name: 'Guide 1',
-        href: '/shop/guide2'
-    },
-    {
-        name: 'New Arrivals',
-        href: '/shop/new-arrivals'
-    },
-    {
-        name: 'Limited Editions',
-        href: '/shop/limited-editions'
-    },
-    {
-        name: 'Products',
-        href: '/shop/products'
-    },
-    {
-        name: 'Sale',
-        href: '/shop/sale'
-    }
-
-]
-
 
 const Appbar: FC<AppbarProps> = ({ }) => {
     return (
-        <div className='relative'>
-            <div className='peer flex justify-between max-w-screen-2xl m-auto'>
-                <div className='flex justify-between basis-1/3 items-center py-4'>
+        <>
+            <div className='peer flex justify-between px-32 -mb-4 fixed top-0 left-0 w-full bg-black z-20'>
+                <div className='flex justify-between basis-1/4 items-center'>
                     <Link href='/homepage'>
-                        <div className='flex text-white text-4xl'>
-                            <Image src='/shoplogo.png' width={50} height={10} alt='shoplogo' />
+                        <div className='flex text-white text-3xl font-bold'>
+                            <Image src='/shoplogo.png' width={30} height={10} alt='shoplogo' className='mx-2' />
                             ShopPage
                         </div>
                     </Link>
-                    <div className='text-white shop'>shop</div>
-                    {/* <ShopDropDown /> */}
+                    <Link className='text-white text-xs shop h-full' href='/shop'>
+                        <div className='hover:border-b-gray-500 border-b-2 border-transparent p-2 my-2'>
+                            SHOP
+                        </div>
+                    </Link>
+                    <Link className='text-white text-xs inside-shop h-full' href='/inside-shop'>
+                        <div className='hover:border-b-gray-500 border-b-2 border-transparent p-2 my-2'>
+                            INSIDE SHOP
+                        </div>
+                    </Link>
                 </div>
             </div>
-            <div className='peer-has-[.shop:hover]:bg-blue-500 bg-gray-500 w-full left-0 top-0'>
-                <div className='flex justify-center'>
-                    <ul className='flex flex-col'>
-                        {dropdownColumnItems.map((item) => {
-                            return <li key={item.name}>
-                                <Link href={item.href}>{item.name}</Link>
-                            </li>
-                        })}
-                    </ul>
-                </div>
-            </div>
-        </div>
+            <ShopDropDown />
+            <InsideDropDown />
+        </>
 
     )
 }
