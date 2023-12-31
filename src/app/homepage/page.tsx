@@ -54,8 +54,17 @@ const page: FC<pageProps> = ({ }) => {
         </Link>
       </div>
     </div>
-    <div className='w-full flex'>
+    <div className='w-full flex h-96'>
+      {productLinks.map((product)=>{
+        let productClass = "bg-[url($'"+ product.imgSrc +"')] w-full h-full bg-cover"
+        return(
+          <Link key={'title'} href={product.href} className='basis-1/3 overflow-hidden'>
+            <div className={productClass}>
 
+            </div>
+          </Link>
+        )
+      })}
     </div>
   </div>)
 }
