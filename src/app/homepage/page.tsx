@@ -2,26 +2,29 @@ import { FC } from 'react'
 import Appbar from '../components/Appbar'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Dancing_Script } from 'next/font/google'
+
+const dancing_Script = Dancing_Script({ subsets: ['latin'] })
 
 interface pageProps {
 
 }
 
-const productLinks= [
+const productLinks = [
   {
-    title:'Headphones',
-    imgSrc:'/headphones.png',
-    href:''
+    title: 'Headphones',
+    imgSrc: '/headphones.png',
+    href: '',
   },
   {
-    title:'Earbuds',
-    imgSrc:'/earbuds.png',
-    href:''
+    title: 'Earbuds',
+    imgSrc: '/earbuds.png',
+    href: ''
   },
   {
-    title:'Speakers',
-    imgSrc:'/speaker.png',
-    href:''
+    title: 'Speakers',
+    imgSrc: '/speaker.png',
+    href: ''
   }
 ]
 
@@ -54,17 +57,33 @@ const page: FC<pageProps> = ({ }) => {
         </Link>
       </div>
     </div>
-    <div className='w-full flex h-96'>
-      {productLinks.map((product)=>{
-        let productClass = "bg-[url($'"+ product.imgSrc +"')] w-full h-full bg-cover"
-        return(
-          <Link key={'title'} href={product.href} className='basis-1/3 overflow-hidden'>
-            <div className={productClass}>
-
+    <div className='w-full flex h-[40rem]'>
+      {productLinks.map((product) => {
+        const pClass = `font-bold top-3/4 absolute ${dancing_Script.className} text-4xl text-zinc-200 w-full text-center group-hover:opacity-0 transition-opacity duration-700`
+        return (
+          <Link key={'title'} href={product.href} className='basis-1/3 overflow-hidden relative group'>
+            <Image src={product.imgSrc} fill={true} alt='shop picture' className='object-cover static' />
+            <p className={pClass}>{product.title}</p>
+            <div className='absolute w-full top-3/4 flex justify-center'>
+              <div className='w-40 h-14 bg-gray-300 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700'>
+                <p>Shop now</p>
+              </div>
             </div>
+
           </Link>
         )
       })}
+    </div>
+    <div className='flex text-white py-10'>
+      <div className='basis-1/3 flex flex-col items-center text-3xl font-bold'>
+        Hear it first
+      </div>
+      <div className='basis-2/3 flex justify-center items-center flex-col'>
+        <p className='text-3xl font-bold mb-5'>Follow us</p>
+        <a href="instagram.com">Instagram</a>
+        <a href="facebook.com">Facebook</a>
+        <a href="twitter.com">Twitter</a>
+      </div>
     </div>
   </div>)
 }
