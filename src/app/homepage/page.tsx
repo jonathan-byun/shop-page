@@ -29,10 +29,9 @@ const productLinks = [
 ]
 
 const page: FC<pageProps> = ({ }) => {
-  return (<div className='bg-black'>
-    <Appbar />
+  return (<div className='bg-black mt-12'>
     <div className='w-full text-white flex text-center justify-center mb-2'>
-      <p className='pt-12 text-sm'>Welcome!<br></br> Free shipping on orders above $75 with code 'This is a test page'<br></br>All images done with hotpot ai.</p>
+      <p className='text-sm'>Welcome!<br></br> Free shipping on orders above $75 with code 'This is a test page'<br></br>All images done with hotpot ai.</p>
     </div>
     <div className='flex w-full h-lvh'>
       <Link href='/' className='basis-2/3 overflow-hidden'>
@@ -75,8 +74,9 @@ const page: FC<pageProps> = ({ }) => {
       })}
     </div>
     <div className='flex text-white py-10'>
-      <div className='basis-1/3 flex flex-col items-center text-3xl font-bold'>
-        Hear it first
+      <div className='basis-1/3 flex flex-col items-center'>
+        <p className='text-3xl font-bold'>Hear it first</p>
+        
       </div>
       <div className='basis-2/3 flex justify-center items-center flex-col'>
         <p className='text-3xl font-bold mb-5'>Follow us</p>

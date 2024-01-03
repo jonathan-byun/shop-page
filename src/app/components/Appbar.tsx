@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { FC } from 'react'
 import ShopDropDown from './ShopDropDown'
 import InsideDropDown from './InsideDropDown'
+import UserOptions from './UserOptions'
 
 interface AppbarProps {
 
@@ -30,6 +31,9 @@ const Appbar: FC<AppbarProps> = ({ }) => {
                             INSIDE SHOP
                         </div>
                     </Link>
+                </div>
+                <div className='flex justify-between'>
+                    <UserOptions />
                 </div>
             </div>
             <ShopDropDown />

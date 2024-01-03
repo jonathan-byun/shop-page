@@ -11,7 +11,7 @@ const dropdownColumnItems = [
         href: '/shop/guide1'
     },
     {
-        name: 'Guide 1',
+        name: 'Guide 2',
         href: '/shop/guide2'
     },
     {
