@@ -1,29 +1,29 @@
 import { FC } from 'react'
+import ProductCard from '../components/ProductCard'
+import prisma from '../api/prisma/prisma'
+import { Product } from '../api/auth/[...nextauth]/lib/types/db'
+import { Prisma } from '@prisma/client'
 
 interface pageProps {
-  
+
 }
 
-const options=[
-    'HEADPHONES',
-    'EARBUDS',
-    'SPEAKERS',
-    'GAMING'
-]
 
-const page: FC<pageProps> = ({}) => {
-  return <div>
-    <div className='flex flex-col items-center mt-12'>
-        <p className='text-6xl font-bold my-10'>SHOP ALL</p>
-        <div className='flex'>
-            {options.map((option)=>{
-                return(
-                    <button key={option}>{option}</button>
+
+const page: FC<pageProps> = async ({ }) => {
+    const products: Product[] = await prisma.product.findMany()
+    return (
+        <div className='flex w-full mb-5 justify-between flex-wrap'>
+            {products.map((product) => {
+                return (
+
+                    <ProductCard product={product} key={product.id} />
+
+
                 )
             })}
-        </div>
-    </div>
-  </div>
+
+        </div>)
 }
 
 export default page

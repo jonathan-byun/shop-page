@@ -4,6 +4,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 import prisma from "../../prisma/prisma";
+import { Prisma } from "@prisma/client";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -27,7 +28,7 @@ const storage = getStorage(app)
 export async function createProduct(formData: FormData) {
     const image = formData.get('productImage') as Blob
     const quantity = Number(formData.get('quantity'))
-    const price = Number(formData.get('price'))
+    const price = new Prisma.Decimal(Number(formData.get('price')))
     const category = [formData.get('category') as string]
     const name = <string>formData.get('name')
 

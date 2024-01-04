@@ -30,8 +30,10 @@ const productLinks = [
 
 const page: FC<pageProps> = ({ }) => {
   return (<div className='bg-black mt-12'>
-    <div className='w-full text-white flex text-center justify-center mb-2'>
-      <p className='text-sm'>Welcome!<br></br> Free shipping on orders above $75 with code 'This is a test page'<br></br>All images done with hotpot ai.</p>
+    <div className='w-full text-white flex flex-col text-center justify-center mb-2 text-sm'>
+      <p>Welcome!</p>
+      <p>Free shipping on orders above $75 with code &apos;This is a test page&apos;</p>
+      <p>All images done with hotpot ai.</p>
     </div>
     <div className='flex w-full h-lvh'>
       <Link href='/' className='basis-2/3 overflow-hidden'>
