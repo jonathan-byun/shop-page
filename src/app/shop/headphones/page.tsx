@@ -14,7 +14,7 @@ const page: FC<pageProps> = async({}) => {
                 has: 'headphones'
             }
     }})
-  return <div className='flex w-full mb-5 justify-between flex-wrap'>
+  return <div className='flex w-full mb-5 justify-evenly flex-wrap'>
   {products.map((product) => {
       return (
           <ProductCard product={product} key={product.id}/>

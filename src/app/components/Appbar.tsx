@@ -32,7 +32,7 @@ const Appbar: FC<AppbarProps> = ({ }) => {
                         </div>
                     </Link>
                 </div>
-                <div className='flex justify-between'>
+                <div className='flex justify-between items-center'>
                     <UserOptions />
                 </div>
             </div>
