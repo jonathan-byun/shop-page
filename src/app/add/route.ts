@@ -3,7 +3,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
-import prisma from "../../prisma/prisma";
+import prisma from "../api/prisma/prisma";
 import { Prisma } from "@prisma/client";
 
 // TODO: Add SDKs for Firebase products that you want to use

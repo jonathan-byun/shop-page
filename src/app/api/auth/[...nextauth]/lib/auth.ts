@@ -23,14 +23,15 @@ export const authOptions: NextAuthOptions = {
         Google({
             profile(profile) {
                 const userRole = 'user'
-                return{
-                    id:profile.sub,
-                     name:profile.name,
-                     email:profile.email,
-                     emailVerified:profile.email_verified, 
-                     image:profile.picture,
-                     role:userRole,
-                    }
+                console.log('profile', profile)
+                return {
+                    id: profile.sub,
+                    name: profile.name,
+                    email: profile.email,
+                    emailVerified: profile.email_verified,
+                    image: profile.picture,
+                    role: userRole,
+                }
             },
             clientId: getGoogleCredentials().clientId,
             clientSecret: getGoogleCredentials().clientSecret
@@ -42,13 +43,14 @@ export const authOptions: NextAuthOptions = {
     },
     callbacks: {
         async jwt({ token, user }) {
-            const tokenId = token.sub as string
+            const tokenId = (token.id  ? token.id: token.sub) as string
+            console.log('token28', token, 'user', user)
             let dbUserResult = await prisma.user.findUnique({
                 where: {
                     id: tokenId
                 }
             })
-            console.log('here',dbUserResult)
+            console.log('here', dbUserResult)
             if (!dbUserResult) {
                 token.id = user.id
                 return token
@@ -57,6 +59,7 @@ export const authOptions: NextAuthOptions = {
             return (dbUserResult)
         },
         async session({ session, token }) {
+            console.log('session part', session, 'session token', token)
             if (token) {
                 session.user.id = token.id
                 session.user.name = token.name

@@ -1,8 +1,7 @@
 import { FC } from 'react'
 import ProductCard from '../components/ProductCard'
 import prisma from '../api/prisma/prisma'
-import { Product } from '../api/auth/[...nextauth]/lib/types/db'
-import { Prisma } from '@prisma/client'
+import { Prisma, Product } from '@prisma/client'
 
 interface pageProps {
 

@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { FC, useEffect, useState } from 'react'
-import { createProduct } from '../api/product/create/route'
+import { createProduct } from '../add/route'
 
 interface UploadAndDisplayImageProps {
 

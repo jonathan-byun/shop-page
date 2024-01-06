@@ -1,7 +1,8 @@
 import { FC } from 'react'
-import { Product } from '../api/auth/[...nextauth]/lib/types/db'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { Product } from '@prisma/client'
 
 
 interface ProductCardProps {

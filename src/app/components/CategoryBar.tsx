@@ -21,8 +21,8 @@ const CategoryBar: FC<CategoryBarProps> = ({}) => {
     const linkpath=`/shop/${option}`
     const buttonClass = 'rounded-sm w-40 h-12 hover:bg-gray-300 ' + (pathname == linkpath ? 'bg-blue-300':'bg-gray-400')
     return (
-      <Link href={linkpath}>
-        <button className={buttonClass} key={option}>{option.toUpperCase()}</button>
+      <Link href={linkpath} key={option}>
+        <button className={buttonClass}>{option.toUpperCase()}</button>
       </Link>
 
     )
