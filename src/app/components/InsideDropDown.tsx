@@ -32,7 +32,7 @@ const InsideDropDown: FC<InsideDropDownProps> = ({ }) => {
         {dropdownItems.map((item) => {
             return (
                 <Link href={item.href} key={item.title} className='flex flex-col divide-y divide-gray-400 basis-1/3 group'>
-                    <div className='relative w-full h-96 overflow-hidden'>
+                    <div className='relative w-full h-72 overflow-hidden'>
                         <Image src={item.imageRef} alt={item.alt} fill={true} className='object-cover group-hover:scale-110 grayscale group-hover:grayscale-[60%] transition ease-in-out duration-1000' />
                     </div>
                     <div className='w-full text-4xl font-bold pt-5 pb-20 pl-3 flex-grow'>{item.title}</div>

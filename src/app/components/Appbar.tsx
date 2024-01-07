@@ -11,9 +11,26 @@ interface AppbarProps {
 
 
 const Appbar: FC<AppbarProps> = ({ }) => {
+    const numberOfMarquees = 7;
     return (
-        <>
-            <div className='peer flex justify-between px-32 -mb-4 fixed top-0 left-0 w-full bg-black z-20'>
+        <div className='fixed top-0 left-0 w-full'>
+            <div className='bg-blue-200 flex overflow-x-hidden relative'>
+                <div className='animate-marquee whitespace-nowrap'>
+                    {[...Array(numberOfMarquees)].map((e, i) => {
+                        return (
+                            <span className='mx-8' key={i}>FREE SHIPPING OVER $50</span>
+                        )
+                    })}
+                </div>
+                <div className='absolute top-0 animate-marquee2 whitespace-nowrap'>
+                    {[...Array(numberOfMarquees)].map((e, i) => {
+                        return (
+                            <span className='mx-8' key={i}>FREE SHIPPING OVER $50</span>
+                        )
+                    })}
+                </div>
+            </div>
+            <div className='peer flex justify-between px-32 w-full bg-black z-20'>
                 <div className='flex justify-between basis-1/4 items-center'>
                     <Link href='/homepage'>
                         <div className='flex text-white text-3xl font-bold'>
@@ -38,7 +55,7 @@ const Appbar: FC<AppbarProps> = ({ }) => {
             </div>
             <ShopDropDown />
             <InsideDropDown />
-        </>
+        </div>
 
     )
 }

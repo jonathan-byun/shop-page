@@ -29,11 +29,24 @@ const productLinks = [
 ]
 
 const page: FC<pageProps> = ({ }) => {
-  return (<div className='bg-black mt-12'>
+  return (<div className='bg-black mt-14'>
     <div className='w-full text-white flex flex-col text-center justify-center mb-2 text-sm'>
       <p>Welcome!</p>
       <p>Free shipping on orders above $75 with code &apos;This is a test page&apos;</p>
       <p>All images done with hotpot ai.</p>
+    </div>
+    <div className='w-full h-screen'>
+      <div className='relative w-full h-full overflow-hidden'>
+        <Image src='/banner.png' fill={true} alt='banner' className='object-cover' />
+        <div className='absolute top-20 left-20 max-w-lg bg-red-300 px-3 py-4 rounded-lg'>
+          <p className='text-7xl font-bold'>A better way to experience music.</p>
+          <p className='text-2xl text-center mt-20'>New micro-beats technology that accentuates crisp,<em>clean</em> sound while also protecting hearing.</p>
+        </div>
+      </div>
+    </div>
+    <div className='border-t-2 border-b-2 border-black py-6 flex items-center bg-white justify-center'>
+      <p>AS SEEN IN</p>
+      <p className='font-bold text-xl'>Forbes</p>
     </div>
     <div className='flex w-full h-lvh'>
       <Link href='/' className='basis-2/3 overflow-hidden'>
@@ -78,7 +91,7 @@ const page: FC<pageProps> = ({ }) => {
     <div className='flex text-white py-10'>
       <div className='basis-1/3 flex flex-col items-center'>
         <p className='text-3xl font-bold'>Hear it first</p>
-        
+
       </div>
       <div className='basis-2/3 flex justify-center items-center flex-col'>
         <p className='text-3xl font-bold mb-5'>Follow us</p>

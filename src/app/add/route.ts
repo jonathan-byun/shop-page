@@ -46,7 +46,8 @@ export async function createProduct(formData: FormData) {
                 price: price,
                 name: name,
                 category: category,
-                url: downloadUrl
+                url: downloadUrl,
+                description:''
             }
 
         })
