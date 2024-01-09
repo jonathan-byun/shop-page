@@ -13,7 +13,7 @@ interface AppbarProps {
 const Appbar: FC<AppbarProps> = ({ }) => {
     const numberOfMarquees = 7;
     return (
-        <div className='fixed top-0 left-0 w-full'>
+        <div className='fixed top-0 left-0 w-full z-20'>
             <div className='bg-blue-200 flex overflow-x-hidden relative'>
                 <div className='animate-marquee whitespace-nowrap'>
                     {[...Array(numberOfMarquees)].map((e, i) => {
@@ -30,12 +30,15 @@ const Appbar: FC<AppbarProps> = ({ }) => {
                     })}
                 </div>
             </div>
-            <div className='peer flex justify-between px-32 w-full bg-black z-20'>
+            <div className='peer flex justify-between px-32 w-full bg-black'>
                 <div className='flex justify-between basis-1/4 items-center'>
                     <Link href='/homepage'>
                         <div className='flex text-white text-3xl font-bold'>
                             <Image src='/shoplogo.png' width={30} height={10} alt='shoplogo' className='mx-2' />
-                            ShopPage
+                            <div className='overflow-hidden relative group'>
+                                <p className='group-hover:-translate-y-10 transition-transform duration-1000'>ShopPage</p>
+                                <p className='translate-y-10 group-hover:-translate-y-7 transition-transform duration-1000 absolute text-sm'>Step into the future</p>
+                            </div>
                         </div>
                     </Link>
                     <Link className='text-white text-xs shop h-full' href='/shop'>

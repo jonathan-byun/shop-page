@@ -20,7 +20,7 @@ const Providers: FC<ProvidersProps> = ({ children, session }) => {
   const [cart, setCart] = useState<Array<Product> | null>(null)
   useEffect(()=>{
     console.log('provider',session)
-    getCart()
+    // getCart()
   },[])
   return <>
     <SessionProvider session={session}>
