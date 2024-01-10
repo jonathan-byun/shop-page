@@ -28,12 +28,12 @@ const dropdownItems = [
 ]
 
 const InsideDropDown: FC<InsideDropDownProps> = ({ }) => {
-    return <div className='peer-has-[.inside-shop:hover]:visible hover:visible scale-y-0 peer-has-[.inside-shop:hover]:scale-y-100 hover:scale-y-100 origin-top invisible flex w-full divide-x divide-gray-400 bg-gray-50 fixed transition-all duration-1000 z-10'>
+    return <div className='peer-has-[.inside-shop:hover]:visible peer-has-[.inside-shop:hover]:z-10 hover:visible scale-y-0 peer-has-[.inside-shop:hover]:scale-y-100 hover:scale-y-100 origin-top invisible flex w-full divide-x divide-gray-400 bg-gray-50 fixed transition-all duration-1000 '>
         {dropdownItems.map((item) => {
             return (
                 <Link href={item.href} key={item.title} className='flex flex-col divide-y divide-gray-400 basis-1/3 group'>
                     <div className='relative w-full h-72 overflow-hidden'>
-                        <Image src={item.imageRef} alt={item.alt} fill={true} className='object-cover group-hover:scale-110 grayscale group-hover:grayscale-[60%] transition ease-in-out duration-1000' />
+                        <Image src={item.imageRef} sizes='33vw' alt={item.alt} fill={true} className='object-cover group-hover:scale-110 grayscale group-hover:grayscale-[60%] transition ease-in-out duration-1000' />
                     </div>
                     <div className='w-full text-4xl font-bold pt-5 pb-20 pl-3 flex-grow'>{item.title}</div>
                 </Link>

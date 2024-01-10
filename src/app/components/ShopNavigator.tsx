@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import { FC, useState } from 'react'
 
 
@@ -16,12 +17,15 @@ const ShopNavigator: FC<ShopNavigatorProps> = ({ }) => {
   }
 
   return <div className=' sticky top-16 bg-white border-b-[1px] border-black py-7 z-10'>
-    <div className='flex justify-between max-w-4xl m-auto w-full'>
+    <div className='flex justify-between max-w-3xl m-auto w-full'>
       {pageSections.map((section) => {
-      return (
-        <button key={section} value={section} className={'py-2 w-32 border-[1px] border-black text-sm ' + (current == section ? 'bg-blue-200': 'hover:bg-blue-200 hover:border-none transition-all duration-500')} onClick={(e) => handleClick(e)}>{section}</button>
-      )
-    })}
+        return (
+          <Link key={section} href={`#${section}`}>
+            <button value={section} className={'py-2 w-32 border-[1px] border-black text-sm ' + (current == section ? 'bg-blue-200' : 'hover:bg-blue-200 hover:border-none transition-all duration-500')} onClick={(e) => handleClick(e)}>{section}</button>
+          </Link>
+
+        )
+      })}
     </div>
 
   </div>
