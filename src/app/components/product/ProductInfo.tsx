@@ -1,15 +1,16 @@
 import { FC } from 'react'
-import ListSection from './ui/ListSection'
-import DropdownSection from './ui/DropdownSection'
+import ListSection from '../ui/ListSection'
+import DropdownSection from '../ui/DropdownSection'
 
 interface ProductInfoProps {
 
 }
 
 const includedSample = ['headphones', 'box', 'charger', 'cleaning towel']
+const sampleDropdownText=['zinc', 'flouride', 'water']
 
 const ProductInfo: FC<ProductInfoProps> = ({ }) => {
-    return <div className='flex flex-col w-full overflow-hidden h-screen ml-7'>
+    return <div className='flex flex-col w-full ml-7 pb-10'>
         <div className='w-full border-b-[1px] border-black py-10'>
             <p className='text-5xl font-bold'>Name</p>
             <p className='my-5'>Description oasdufhaohfoasehfoasheoiashfioasheofiahseiofhaseiohasoefhio</p>
@@ -19,7 +20,10 @@ const ProductInfo: FC<ProductInfoProps> = ({ }) => {
         </div>
         <ListSection list={includedSample} title='INCLUDED' />
         <ListSection list={includedSample} title='INCLUDED' />
-        <DropdownSection />
+        <DropdownSection dropdownText={sampleDropdownText} ordered={true} title='SUSTAINABLE MATERIALS' title2={null} descriptionList={null}/>
+        <DropdownSection dropdownText={sampleDropdownText} ordered={false} title='DOES NOT CONTAIN' title2={'REMOVED'} descriptionList={'dhf, sdhfih, ishfei, hsfui, sfueh'}/>
+        
+        
 
     </div>
 }

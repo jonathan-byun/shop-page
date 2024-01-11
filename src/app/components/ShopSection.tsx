@@ -1,7 +1,7 @@
 'use server'
 import { Product } from '@prisma/client'
 import { FC } from 'react'
-import ProductCard from './ProductCard'
+import ProductCard from './product/ProductCard'
 import prisma from '../api/prisma/prisma'
 import { getProducts } from '../actions'
 

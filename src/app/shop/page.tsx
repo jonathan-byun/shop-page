@@ -1,5 +1,5 @@
 import { FC, useRef } from 'react'
-import ProductCard from '../components/ProductCard'
+import ProductCard from '../components/product/ProductCard'
 import prisma from '../api/prisma/prisma'
 import { Prisma, Product } from '@prisma/client'
 import ShopNavigator from '../components/ShopNavigator'

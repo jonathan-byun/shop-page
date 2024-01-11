@@ -1,5 +1,5 @@
 'use client'
-import { signIn, signOut } from 'next-auth/react'
+import { signIn, signOut, useSession } from 'next-auth/react'
 import { FC, useState } from 'react'
 import { FaShoppingBag } from "react-icons/fa";
 import Cart from './Cart';
@@ -12,6 +12,7 @@ interface UserOptionsProps {
 const UserOptions: FC<UserOptionsProps> = ({ }) => {
   const [cartVisible, setCartVisible] = useState(false)
   const freeShippingLimit = 40
+  const { data: session, status } = useSession()
 
   function showCart() {
     setCartVisible(true)
@@ -20,8 +21,10 @@ const UserOptions: FC<UserOptionsProps> = ({ }) => {
   return (
     <>
       <div className='text-white text-sm'>
-        <button className='mx-2' onClick={() => signIn()}>Sign In</button>
-        <button className='mx-2' onClick={() => signOut()}>Sign Out</button>
+        {status === 'authenticated'
+          ? <button className='mx-2' onClick={() => signOut()}>Sign Out</button>
+          : <button className='mx-2' onClick={() => signIn()}>Sign In</button>
+        }
         <button onClick={showCart}>
           <FaShoppingBag size={20} />
         </button>

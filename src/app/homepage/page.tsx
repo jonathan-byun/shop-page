@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Oswald } from 'next/font/google'
 import prisma from '../api/prisma/prisma'
-import ProductCard from '../components/ProductCard'
+import ProductCard from '../components/product/ProductCard'
 
 import { TbAdjustmentsHeart } from "react-icons/tb";
 import { MdHearing } from "react-icons/md";
