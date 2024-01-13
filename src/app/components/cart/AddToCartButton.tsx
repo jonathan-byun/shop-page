@@ -15,7 +15,6 @@ const AddToCartButton: FC<AddToCartButtonProps> = ({ quantity, id }) => {
     const { cart, setCart } = useContext(CartContext)
     
     async function handleClick() {
-       
         if (!cart) {
             redirectToPage('login')
         }

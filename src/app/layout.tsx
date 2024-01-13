@@ -7,6 +7,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/lib/auth'
 import prisma from './api/prisma/prisma'
 import { createCart } from './actions'
+import CartSidebar from './components/cart/CartSidebar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -38,6 +39,7 @@ export default async function RootLayout({
       <body className={inter.className}>
         <Providers session={session} dbCart={cart}>
           <Appbar />
+          <CartSidebar />
           {children}
         </Providers>
       </body>

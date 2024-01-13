@@ -2,6 +2,7 @@ import { FC } from 'react'
 import ListSection from '../ui/ListSection'
 import DropdownSection from '../ui/DropdownSection'
 import prisma from '@/app/api/prisma/prisma'
+import AddToCartInfoButton from '../cart/AddToCartInfoButton'
 
 interface ProductInfoProps {
     name:string,
@@ -30,7 +31,7 @@ const ProductInfo: FC<ProductInfoProps> = async({name,description,price,productI
             <div className='w-full border-b-[1px] border-black py-10'>
                 <p className='text-5xl font-bold'>{name}</p>
                 <p className='my-5'>{description}</p>
-                <button className='w-full bg-gray-900 text-white py-5 my-3 hover:bg-blue-200 transition-colors hover:text-black duration-500'>ADD TO BAG | {price}</button>
+                <AddToCartInfoButton price={price} productId={productId}/>
                 <p className='text-xs text-center'>Money-back Guarantee | Free shipping over $30</p>
             </div>
             {listSections.map((section)=>{
