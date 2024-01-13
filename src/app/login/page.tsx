@@ -4,7 +4,7 @@ import { signIn } from 'next-auth/react'
 import Image from 'next/image'
 import { FC, useState } from 'react'
 import toast from 'react-hot-toast'
-import LoginButton from '../components/LoginButton'
+import LoginButton from '../components/appbar/LoginButton'
 
 interface pageProps {
 

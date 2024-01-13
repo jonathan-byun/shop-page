@@ -10,7 +10,6 @@ interface pageProps {
 }
 
 const page: FC<pageProps> = async ({ }) => {
-    // const bestSellersRef = useRef(null)
     return (
         <div className='max-w-7xl mx-auto w-full'>
             <div className='mt-20 flex flex-col items-center'>

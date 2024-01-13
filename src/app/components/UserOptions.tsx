@@ -2,7 +2,7 @@
 import { signIn, signOut, useSession } from 'next-auth/react'
 import { FC, useState } from 'react'
 import { FaShoppingBag } from "react-icons/fa";
-import Cart from './Cart';
+import Cart from './cart/Cart';
 
 
 interface UserOptionsProps {

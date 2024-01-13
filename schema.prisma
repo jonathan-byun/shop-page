@@ -81,7 +81,7 @@ model ProductInCart {
   cartId    String
   quantity  Int
 
-  @@id([productId, cartId])
+  @@id(name:"cartProduct",[productId, cartId])
 }
 
 model Cart {

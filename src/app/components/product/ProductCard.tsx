@@ -3,6 +3,7 @@ import { FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Product } from '@prisma/client'
+import AddToCartButton from '../cart/AddToCartButton'
 
 
 interface ProductCardProps {
@@ -30,9 +31,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
                     </div>
                 </div>
             </Link>
-            <button className='bg-black text-white text-center py-3 w-full group-hover:bg-white group-hover:text-black transition-all duration-500 group/button'>
-                <p className='group-hover/button:scale-110 transition-transform duration-500'>ADD TO CART<span className='hidden group-hover:inline'> | {product.quantity} left</span></p>
-            </button>
+            <AddToCartButton quantity={product.quantity} id={product.id}/>
         </div>
 
     </div>

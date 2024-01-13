@@ -1,7 +1,7 @@
 import { Product } from '@prisma/client'
 import Image from 'next/image'
 import { FC } from 'react'
-import CartQuantityButtons from '../CartQuantityButtons'
+import CartQuantityButtons from '../cart/CartQuantityButtons'
 
 interface ProductCartCardProps {
     //   product:Product

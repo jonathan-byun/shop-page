@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import Appbar from '../components/Appbar'
+import Appbar from '../components/appbar/Appbar'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Oswald } from 'next/font/google'

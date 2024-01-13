@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { FC } from 'react'
 import ShopDropDown from './ShopDropDown'
 import InsideDropDown from './InsideDropDown'
-import UserOptions from './UserOptions'
+import UserOptions from '../UserOptions'
 
 interface AppbarProps {
 

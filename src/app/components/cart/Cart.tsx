@@ -1,7 +1,7 @@
 'use client'
 import { FC } from 'react'
 import { RxCross1 } from "react-icons/rx";
-import ProductCartCard from './product/ProductCartCard';
+import ProductCartCard from '../product/ProductCartCard';
 
 interface CartProps {
   

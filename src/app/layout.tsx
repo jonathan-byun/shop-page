@@ -2,9 +2,11 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Providers from './components/ui/Providers'
-import Appbar from './components/Appbar'
+import Appbar from './components/appbar/Appbar'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/lib/auth'
+import prisma from './api/prisma/prisma'
+import { createCart } from './actions'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,10 +21,22 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   const session =  await getServerSession(authOptions)
+  let cart = null
+  if (session){
+  cart = await prisma.cart.findUnique({
+    where:{
+      userId:session.user.id
+    }, include:{
+      products:true
+    }
+  })}
+  if (session && !cart) {
+    cart = await createCart(session.user.id)
+  }
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers session={session}>
+        <Providers session={session} dbCart={cart}>
           <Appbar />
           {children}
         </Providers>
