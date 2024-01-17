@@ -22,7 +22,9 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
             <p className='text-sm'>${Number(product.price)}</p>
         </div>
         <div className='group'>
-            <Link href={`/shop/singleProduct/${linkCategory}`}>
+            {/* link here would be direct towards the product but they all go to the formatted one to show proof of concept 
+            <Link href={`/shop/singleProduct/${linkCategory}`}> */}
+            <Link href={`/shop/singleProduct/headphone`}>
                 <div className='overflow-hidden relative h-96'>
                     <Image src={product.url} sizes='20vw' alt='product img' className='object-cover group-hover:scale-110 transition-transform duration-500' fill={true} />
                     <div className='p-2 absolute'>
@@ -31,7 +33,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
                     </div>
                 </div>
             </Link>
-            <AddToCartButton quantity={product.quantity} id={product.id}/>
+            <AddToCartButton quantity={product.quantity} id={product.id} productPrice={Number(product.price)}/>
         </div>
 
     </div>

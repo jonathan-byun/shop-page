@@ -81,7 +81,7 @@ const page: FC<pageProps> = async ({ }) => {
       }
     }
   })
-  return (<div className='mt-14'>
+  return (<div className='mt-12'>
     <div className='w-full h-screen'>
       <div className='relative w-full h-full overflow-hidden'>
         <Image src='/banner.png' fill={true} alt='banner' className='object-cover' />
@@ -111,9 +111,9 @@ const page: FC<pageProps> = async ({ }) => {
       <div className='flex max-w-7xl w-full'>
         {bestSellersProducts.map((product) => {
           return (<div key={product.id} className='basis-1/4 m-1'>
-            <ProductCard product={product}  />
+            <ProductCard product={product} />
           </div>
-            
+
           )
         })}
       </div>
@@ -156,7 +156,7 @@ const page: FC<pageProps> = async ({ }) => {
             <p className='text-2xl'>HEADPHONES 2.0</p>
           </div>
           <div className='px-10'>
-            <FaArrowRight size={30}/>
+            <FaArrowRight size={30} />
           </div>
           <div className='px-4 py-2'>
             <p className='text-sm text-right'>Get free</p>
@@ -169,26 +169,13 @@ const page: FC<pageProps> = async ({ }) => {
             <p className='text-2xl'>HEADPHONES 2.0 <em>and</em> NECKLACE 2.0 </p>
           </div>
           <div className='px-10'>
-            <FaArrowRight size={30}/>
+            <FaArrowRight size={30} />
           </div>
           <div className='px-4 py-2'>
             <p className='text-sm text-right'>Get free</p>
             <p className='text-2xl text-right'>EARBUDS 2.0 <em>and</em> SPEAKER 2.0</p>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div className='flex py-10'>
-      <div className='basis-1/3 flex flex-col items-center'>
-        <p className='text-3xl font-bold'>Hear it first</p>
-
-      </div>
-      <div className='basis-2/3 flex justify-center items-center flex-col'>
-        <p className='text-3xl font-bold mb-5'>Follow us</p>
-        <a href="instagram.com">Instagram</a>
-        <a href="facebook.com">Facebook</a>
-        <a href="twitter.com">Twitter</a>
       </div>
     </div>
   </div>)

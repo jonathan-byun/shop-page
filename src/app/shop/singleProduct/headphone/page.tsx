@@ -31,6 +31,9 @@ const page: FC<pageProps> = async ({ }) => {
     return (
         product ?
             <div className='bg-slate-100 pt-20'>
+                
+                    <h1 className='font-bold text-center'>All Products Lead to this page format. All information is pulled from the DB and can be scaled with manual addition.</h1>
+                
                 <div className='border-black border-b-[1px] w-full'>
                     <div className='pt-5 flex max-w-7xl mx-auto'>
                         <div className='basis-2/3'>
@@ -59,7 +62,7 @@ const page: FC<pageProps> = async ({ }) => {
                     photoUrl={panelDetails.imageUrl}
                     listItems={panelDetails.PanelOptions}
                 />}
-                <ProductReviewPanel productId={product?.id} />
+                <ProductReviewPanel productId={product?.id} productName={product.name} />
             </div>
             : <div></div>
     )

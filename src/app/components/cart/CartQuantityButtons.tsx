@@ -1,11 +1,18 @@
 import { FC } from 'react'
 
 interface CartQuantityButtonsProps {
-  increment:Function,
-  decrement:Function
+  
 }
 
-const CartQuantityButtons: FC<CartQuantityButtonsProps> = ({increment,decrement}) => {
+const CartQuantityButtons: FC<CartQuantityButtonsProps> = () => {
+  async function increment() {
+
+  }
+
+async function decrement() {
+  
+}
+
   return <div className='flex w-24 border-gray-300 border-[1px] mt-4 justify-between items-center'>
   <button className=' hover:bg-gray-200' onClick={()=>{decrement}}>
       <div className='hover:-translate-y-1 px-3 py-1'>-</div>

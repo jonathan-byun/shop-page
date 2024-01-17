@@ -8,27 +8,27 @@ interface ShopDropDownProps {
 const dropdownColumnItems = [
     {
         name: 'Guide 1',
-        href: '/shop/guide1'
+        href: '/guides/guide1'
     },
     {
         name: 'Guide 2',
-        href: '/shop/guide2'
+        href: '/guides/guide2'
     },
     {
-        name: 'New Arrivals',
-        href: '/shop/new-arrivals'
+        name: 'Hot Accessories',
+        href: '/shop#ACCESSORIES'
     },
     {
-        name: 'Limited Editions',
-        href: '/shop/limited-editions'
+        name: 'Product of the month',
+        href: '/shop/singleProduct/headphone'
     },
     {
         name: 'Products',
-        href: '/shop/products'
+        href: '/shop'
     },
     {
-        name: 'Sale',
-        href: '/shop/sale'
+        name: 'New Earbuds',
+        href: '/shop#EARBUDS'
     }
 
 ]
@@ -37,27 +37,27 @@ const dropdownRowItems = [
     {
         title: 'Headphones',
         description: 'Shop All Headphones',
-        href: '/shop/headphones'
+        href: '/shop#HEADPHONES'
     },
     {
         title: 'Earbuds',
         description: 'Shop All Earbuds',
-        href: '/shop/earbuds'
+        href: '/shop#EARBUDS'
     },
     {
-        title: 'Speakers',
+        title: 'Best Sellers',
         description: 'Shop All Speakers',
-        href: '/shop/speakers'
+        href: '/shop#BEST%20SELLERS'
     },
     {
-        title: 'Gaming',
+        title: 'All',
         description: 'Shop All Gaming',
-        href: '/shop/gaming'
+        href: '/shop#ALL'
     },
     {
         title: 'Accessories',
         description: 'Shop All Accessories',
-        href: '/shop/accessories'
+        href: '/shop#ACCESSORIES'
     }
 ]
 

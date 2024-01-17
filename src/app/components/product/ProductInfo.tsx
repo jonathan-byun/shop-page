@@ -31,7 +31,7 @@ const ProductInfo: FC<ProductInfoProps> = async({name,description,price,productI
             <div className='w-full border-b-[1px] border-black py-10'>
                 <p className='text-5xl font-bold'>{name}</p>
                 <p className='my-5'>{description}</p>
-                <AddToCartInfoButton price={price} productId={productId}/>
+                <AddToCartInfoButton price={price} productId={productId} productPrice={price}/>
                 <p className='text-xs text-center'>Money-back Guarantee | Free shipping over $30</p>
             </div>
             {listSections.map((section)=>{

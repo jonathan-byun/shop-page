@@ -8,6 +8,7 @@ import { authOptions } from './api/auth/[...nextauth]/lib/auth'
 import prisma from './api/prisma/prisma'
 import { createCart } from './actions'
 import CartSidebar from './components/cart/CartSidebar'
+import BottomGuideBar from './components/bottombar/BottomGuideBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -41,6 +42,7 @@ export default async function RootLayout({
           <Appbar />
           <CartSidebar />
           {children}
+          <BottomGuideBar />
         </Providers>
       </body>
     </html>

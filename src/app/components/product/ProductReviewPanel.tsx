@@ -6,14 +6,16 @@ import { Instrument_Serif } from 'next/font/google';
 
 
 import CommentsListPanel from './CommentsListPanel';
+import Link from 'next/link';
 
 interface ProductReviewPanelProps {
-    productId: string
+    productId: string,
+    productName: string,
 }
 
 const instrumentSerif = Instrument_Serif({ weight: '400', subsets: ['latin'] })
 
-const ProductReviewPanel: FC<ProductReviewPanelProps> = async ({ productId }) => {
+const ProductReviewPanel: FC<ProductReviewPanelProps> = async ({ productId,productName }) => {
     const topReviews = await prisma.review.findMany({
         take: 4,
         where: {
@@ -72,7 +74,7 @@ const ProductReviewPanel: FC<ProductReviewPanelProps> = async ({ productId }) =>
                 <div className='text-3xl ml-1 mr-3'><FaStar /></div>
                 <p>Based on {reviewCount} reviews</p>
             </div>
-            <button className='border-black border-[1px] px-5 hover:bg-black hover:text-white'>Add a Review</button>
+            <Link href={{pathname:'/reviews',query:{productId:productId,productName:productName}}} target='_blank' className='border-black border-[1px] px-5 hover:bg-black hover:text-white flex items-center'>Add a Review</Link>
         </div>
         <CommentsListPanel productId={productId} />
     </div>

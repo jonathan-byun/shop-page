@@ -7,6 +7,15 @@ const nextConfig = {
                 hostname:'firebasestorage.googleapis.com',
             }
         ]
+    },
+    async redirects() {
+        return [
+            {
+                source:'/',
+                destination:'/homepage',
+                permanent: true
+            }
+        ]
     }
 }
 
