@@ -43,7 +43,7 @@ const ProductReviewPanel: FC<ProductReviewPanelProps> = async ({ productId,produ
     })
 
     return <div className='py-10 flex flex-col items-center'>
-        <h2 className='text-xl'>DON'T JUST TAKE OUR WORD FOR IT.</h2>
+        <h2 className='text-xl'>DON&#39;T JUST TAKE OUR WORD FOR IT.</h2>
         <div className='flex gap-2 justify-center mt-10'>
             {topReviews.map((review) => {
                 const rating = Number(review.rating)
@@ -56,7 +56,7 @@ const ProductReviewPanel: FC<ProductReviewPanelProps> = async ({ productId,produ
                 return (
                     <div key={review.id} className='basis-1/6 bg-black text-white'>
                         <div className='h-[20rem] border-b-[1px] border-white overflow-y-auto no-scrollbar px-6 py-8'>
-                            <h2 className='text-xl'>"{review.title}"</h2>
+                            <h2 className='text-xl'>{review.title}</h2>
                             <p className='text-sm'>{review.body}</p>
                         </div>
                         <div className='px-6 py-5'>

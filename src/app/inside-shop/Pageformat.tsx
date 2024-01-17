@@ -27,7 +27,7 @@ const Pageformat: FC<PageformatProps> = ({ pageDetails }) => {
         <div className='flex flex-wrap my-10 gap-5 justify-between'>
             {pageDetails.subjects.map((subject) => {
                 return (
-                    <div className='basis-[45%] my-10'>
+                    <div key={subject.title} className='basis-[45%] my-10'>
                         <h3 className='text-3xl'>{subject.title}</h3>
                         <p>{subject.description}</p>
                     </div>

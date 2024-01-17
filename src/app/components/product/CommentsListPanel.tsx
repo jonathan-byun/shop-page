@@ -20,8 +20,8 @@ interface CommentsListPanelProps {
 const CommentsListPanel: FC<CommentsListPanelProps> = ({ productId }) => {
     const [allReviews, setAllReviews] = useState<ReviewsWithUser>()
     useEffect(() => {
-        const reviews = getReviews()
-    }, [])
+        getReviews()
+    }, [getReviews])
 
     async function getReviews() {
         const reviews = await getAllReviews(productId)

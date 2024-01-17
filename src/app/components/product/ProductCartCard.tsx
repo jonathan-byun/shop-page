@@ -16,7 +16,7 @@ const ProductCartCard: FC<ProductCartCardProps> = ({ productId, quantity }) => {
 
     useEffect(() => {
         loadProduct()
-    }, [])
+    }, [loadProduct])
 
     async function loadProduct() {
         const product = await getProductDetails(productId)
