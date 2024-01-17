@@ -47,7 +47,7 @@ async function loadMoreReviews() {
                 allReviews.map((review) => {
                     return (
                         <div key={review.id} className='flex p-8 border-b-[1px] border-gray-300 gap-10'>
-                            <div className='flex flex-col text-sm basis-1/2 gap-1'>
+                            <div className='flex flex-col text-sm basis-1/2 gap-1 max-w-20'>
                                 <p>{review.user.name}</p>
                                 <p>{review.date.toDateString()}</p>
                                 {review.user.purchaseVerified &&

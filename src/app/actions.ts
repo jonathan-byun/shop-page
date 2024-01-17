@@ -1,8 +1,10 @@
 'use server'
 
-import { Product } from "@prisma/client"
+import { Prisma, Product } from "@prisma/client"
 import prisma from "./api/prisma/prisma"
 import { redirect } from "next/navigation"
+import { getServerSession } from "next-auth"
+import { authOptions } from "./api/auth/[...nextauth]/lib/auth"
 
 
 
@@ -189,3 +191,29 @@ export async function redirectToPage(page: string) {
   redirect(`/${page}`)
 }
 
+export default async function submitReview(productId:string,formData:FormData) {
+  const session = await getServerSession(authOptions)
+  const rawFormData = {
+    productId : productId,
+    title: formData.get('title') as string,
+    rating: formData.get('rating') as string,
+    review: formData.get('review') as string
+  }
+  await prisma.review.create({
+    data:{
+      product:{
+        connect:{
+          id:productId
+        }
+      },
+      user:{
+        connect:{
+          id:session?.user.id
+        }
+      },
+      title:rawFormData.title,
+      body:rawFormData.review,
+      rating:new Prisma.Decimal(rawFormData.rating),
+    }
+  })
+}
